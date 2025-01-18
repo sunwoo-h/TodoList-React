@@ -9,7 +9,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
     setSearch(e.target.value);
   };
 
-  const getFilterdData = () => {
+  const getFilteredData = () => {
     if (search === "") {
       return todos;
     }
@@ -18,7 +18,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
     ); // toLowerCase로 소문자 변환 후 비교를 통해 검색에 대소문자 구분 X 시킴
   };
 
-  const filterdTodos = getFilterdData(); // 이렇게 상수로 저장해줘야 밑에서 map메소드 쓸 수 있음
+  const filteredTodos = getFilteredData(); // 이렇게 상수로 저장해줘야 밑에서 map메소드 쓸 수 있음
 
   return (
     <div className="List">
@@ -29,7 +29,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
         placeholder="검색어를 입력하세요"
       />
       <div className="todos_wrapper">
-        {filterdTodos.map((todo) => {
+        {filteredTodos.map((todo) => {
           // todo라는 매개변수 사용
           return (
             <TodoItem
