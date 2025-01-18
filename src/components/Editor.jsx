@@ -1,7 +1,9 @@
 import "./Editor.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
+import { TodoDispatchContext } from "../App";
 
-const Editor = ({ onCreate }) => {
+const Editor = () => {
+  const { onCreate } = useContext(TodoDispatchContext);
   // {} 꼭 써서 객체로 받아야 주의 ㅋㅋ
   const [content, setContent] = useState("");
   const contentRef = useRef();
